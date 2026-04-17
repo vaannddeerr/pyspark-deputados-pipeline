@@ -1,5 +1,5 @@
 from pyspark.sql import functions as F
-from pyspark_deputados.main import menager
+from src.pyspark_deputados.main import menager
 
 
 def executar_etl():
