@@ -4,7 +4,7 @@ from pyspark_deputados.main import menager
 
 def executar_etl():
 
-    df = menager.read_df()
+    df = menager.read_df(menager)
 
     # path = '/Volumes/workspace/default/landing_zone/dadosabertos.json'
 
