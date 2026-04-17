@@ -45,7 +45,7 @@ class DataPipeline:
 
     def read_df(self,  file_name: str, is_path: bool = True):
         if is_path:
-            self.df = self.spark.read.format('delta').load(file_name)
+            self.df = self.spark.read.format('json').option('multiline',True).load(file_name)
         else:
             self.df = self.spark.read.table(file_name)
 
