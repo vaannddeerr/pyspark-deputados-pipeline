@@ -1,10 +1,10 @@
 from pyspark.sql import functions as F
-from src.pyspark_deputados.main import menager
 
 
-def executar_etl():
 
-    df = menager.read_df(menager)
+def executar_etl(menager):
+
+    df = menager.read_df()
 
     # path = '/Volumes/workspace/default/landing_zone/dadosabertos.json'
 
