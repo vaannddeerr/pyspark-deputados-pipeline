@@ -3,10 +3,10 @@ from pyspark.sql import functions as F
 
 
 def executar_etl(menager):
+    path = 'dadosabertos'
+    df = menager.read_df(path)
 
-    df = menager.read_df()
-
-    # path = '/Volumes/workspace/default/landing_zone/dadosabertos.json'
+    
 
     df.withColumn('dados', F.explode(F.col('dados')))\
       .withColumn('id', F.col('dados.id'))\
