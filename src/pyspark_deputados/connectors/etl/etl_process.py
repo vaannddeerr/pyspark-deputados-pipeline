@@ -19,7 +19,7 @@ def executar_etl(menager):
            .withColumn('uriPartido', F.col('dados.uriPartido'))\
            .withColumn('urlFoto', F.col('dados.urlFoto')).drop(F.col('dados'))
     
-    menager.write_df(df)
+    menager.write_df(df, 'overwrite')
     return df
     
 
