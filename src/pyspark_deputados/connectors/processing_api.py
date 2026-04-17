@@ -43,11 +43,11 @@ class DataPipeline:
             print(f"Não foi possível salvar. Erro: {self.error}")
 
 
-    def read_df(self, path:str, is_path: bool = True):
+    def read_df(self,  is_path: bool = True):
         if is_path:
-            self.df = self.spark.read.format('delta').load(path)
+            self.df = self.spark.read.format('delta').load()
         else:
-            self.df = self.spark.read.table(path)
+            self.df = self.spark.read.table()
 
         print(f"Dados carregados. Linhas: {self.df.count()}🔝")
         return self.df
