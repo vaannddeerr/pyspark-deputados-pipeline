@@ -3,7 +3,7 @@ from pyspark.sql import functions as F
 
 
 def executar_etl(menager):
-    path = 'dadosabertos'
+    path = '/Volumes/workspace/default/landing_zone/dadosabertos.json'
     df = menager.read_df(path)
 
     
