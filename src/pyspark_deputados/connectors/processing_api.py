@@ -4,9 +4,9 @@ import json
 
 
 class DataPipeline:
-    def __init__(self, url:str, spark_instance:None):
+    def __init__(self, url:str):
         self.url = url
-        self.spark = spark_instance
+        self.spark = None
         self.df = None
         self.response = None
         self.error = None
