@@ -52,7 +52,7 @@ class DataPipeline:
         print(f"Dados carregados. Linhas: {self.df.count()}🔝")
         return self.df
     
-    def write_df(self, name_table:str, modo:str='overwrite'):
+    def write_df(self, tableName:str, modo:str='overwrite'):
         """Grava o DataFrame atual como uma tabela Delta."""
         if self.df is None:
             raise ValueError("❌Não há dados carregados para gravar! Use ler_tabela primeiro.")
@@ -60,6 +60,6 @@ class DataPipeline:
         self.df.write \
             .format("delta") \
             .mode(modo) \
-            .saveAsTable(name_table)
-        print(f"Tabela {name_table} gravada com sucesso✔️.")
+            .saveAsTable(tableName)
+        print(f"Tabela {tableName} gravada com sucesso✔️.")
 
