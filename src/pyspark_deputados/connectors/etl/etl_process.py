@@ -17,6 +17,6 @@ def executar_etl(menager):
                 .withColumn('urlFoto', F.col('dados.urlFoto')).drop(F.col('dados'))
     
     
-    return menager.write_df('dadosabertos')
+    return df
     
 
